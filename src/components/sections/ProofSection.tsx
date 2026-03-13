@@ -1,4 +1,3 @@
-import { TESTIMONIALS } from "@/lib/constants"
 import type { Testimonial } from "@/types"
 
 function ChatBubble({ testimonial }: { testimonial: Testimonial }) {
@@ -26,7 +25,7 @@ function ChatBubble({ testimonial }: { testimonial: Testimonial }) {
   )
 }
 
-export function ProofSection() {
+export function ProofSection({ testimonials }: { testimonials: Testimonial[] }) {
   return (
     <section id="proof" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-5">
@@ -44,7 +43,7 @@ export function ProofSection() {
 
         {/* Bubbles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-          {TESTIMONIALS.map((t) => (
+          {testimonials.map((t) => (
             <ChatBubble key={t.id} testimonial={t} />
           ))}
         </div>

@@ -1,8 +1,8 @@
-import { MENU_ITEMS, BUSINESS } from "@/lib/constants"
 import { MenuCard } from "@/components/MenuCard"
 import { WAButton } from "@/components/ui/WAButton"
+import { BusinessInfo, MenuItem } from "@/types"
 
-export function MenuSection() {
+export function MenuSection({ business, items }: { business: BusinessInfo, items: MenuItem[] }) {
   return (
     <section id="menu" className="py-20 bg-orange-50">
       <div className="max-w-5xl mx-auto px-5">
@@ -19,17 +19,24 @@ export function MenuSection() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {MENU_ITEMS.map((item) => (
-            <MenuCard key={item.id} item={item} />
+          {items.filter(i => i.available !== false).slice(0, 4).map((item) => (
+            <MenuCard key={item.id} item={item} whatsapp={business.whatsapp} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-10">
-          <WAButton
-            href={`https://wa.me/${BUSINESS.whatsapp}?text=Halo%20saya%20mau%20lihat%20menu%20lengkap%20WARPAS%20SZA`}
+        <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a 
+            href="/menu" 
+            className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-orange-100 text-orange-600 font-syne font-extrabold rounded-2xl hover:bg-orange-50 transition-all text-center"
           >
-            Lihat Menu Lengkap via WhatsApp
+            Lihat Semua Menu
+          </a>
+          <WAButton
+            href={`https://wa.me/${business.whatsapp}?text=Halo%20saya%20mau%20order%20WARPAS%20SZA`}
+            className="w-full sm:w-auto"
+          >
+            Order via WhatsApp
           </WAButton>
         </div>
       </div>

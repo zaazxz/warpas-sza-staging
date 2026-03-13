@@ -1,11 +1,11 @@
 import { WAButton } from "@/components/ui/WAButton"
-import { BUSINESS } from "@/lib/constants"
+import { BusinessInfo } from "@/types"
 
-export function UrgencySection() {
+export function UrgencySection({ business }: { business: BusinessInfo }) {
   const chips = [
-    { icon: "🕘", label: `${BUSINESS.openHour} – ${BUSINESS.closeHour}` },
-    { icon: "📍", label: `${BUSINESS.address}, ${BUSINESS.city.split(",")[0]}` },
-    { icon: "💰", label: "Mulai 15K" },
+    { icon: "🕘", label: `${business.openHour} – ${business.closeHour}` },
+    { icon: "📍", label: `${business.address}, ${business.city.split(",")[0]}` },
+    { icon: "💰", label: `Mulai ${business.minPrice / 1000}K` },
   ]
 
   return (
@@ -20,7 +20,7 @@ export function UrgencySection() {
           {/* Text */}
           <div>
             <h2 className="font-syne font-extrabold text-2xl md:text-3xl text-amber-900 mb-2">
-              ⏰ Buka Cuma Sampai Jam 17.00!
+              ⏰ Buka Cuma Sampai Jam {business.closeHour}!
             </h2>
             <p className="text-amber-800 text-sm">
               Biasanya udah habis sebelum sore. Jangan sampai kehabisan ya!
@@ -38,7 +38,7 @@ export function UrgencySection() {
           </div>
 
           {/* CTA */}
-          <WAButton href={BUSINESS.waBaseUrl} variant="amber" size="md">
+          <WAButton href={business.waBaseUrl} variant="amber" size="md">
             Pesan Sekarang Sebelum Habis!
           </WAButton>
         </div>

@@ -3,9 +3,9 @@
 import { useEffect } from "react"
 import { useUIStore } from "@/store/useUIStore"
 import { WAButton } from "@/components/ui/WAButton"
-import { BUSINESS } from "@/lib/constants"
+import { BusinessInfo } from "@/types"
 
-export function Navbar() {
+export function Navbar({ business }: { business: BusinessInfo }) {
   const { isScrolled, setScrolled } = useUIStore()
 
   useEffect(() => {
@@ -25,12 +25,12 @@ export function Navbar() {
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 text-orange-500 font-extrabold text-xl font-syne no-underline">
           <span className="text-2xl">🍝</span>
-          WARPAS SZA
+          {business.name}
         </a>
 
         {/* Desktop CTA */}
         <WAButton
-          href={BUSINESS.waBaseUrl}
+          href={business.waBaseUrl}
           size="sm"
           className="hidden md:inline-flex text-sm font-syne"
         >

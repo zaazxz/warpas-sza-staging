@@ -4,6 +4,7 @@ import type { MenuItem } from "@/types"
 
 interface MenuCardProps {
   item: MenuItem
+  whatsapp: string
 }
 
 function StarRating({ count }: { count: number }) {
@@ -16,14 +17,14 @@ function StarRating({ count }: { count: number }) {
   )
 }
 
-export function MenuCard({ item }: MenuCardProps) {
+export function MenuCard({ item, whatsapp }: MenuCardProps) {
   const priceK = item.price / 1000
 
   return (
     <div className="bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-[0_14px_44px_rgba(249,115,22,0.2)] group">
       {/* Thumb */}
-      <div className="relative h-44 bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center text-7xl">
-        {item.emoji}
+      <div className="relative h-44 bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center text-7xl overflow-hidden">
+        {item.emoji.startsWith("/") ? <img src={item.emoji} alt={item.name} className="w-full h-full object-cover" /> : item.emoji}
         <span
           className={cn(
             "absolute top-3 left-3 text-white text-xs font-bold px-2.5 py-1 rounded-full",
@@ -48,7 +49,7 @@ export function MenuCard({ item }: MenuCardProps) {
             {priceK}K
           </span>
           <WAButton
-            href={`https://wa.me/6281219537456?text=${item.waText}`}
+            href={`https://wa.me/${whatsapp}?text=${item.waText}`}
             size="sm"
             className="text-xs px-4 py-2"
           >

@@ -1,4 +1,6 @@
-export function ProblemSection() {
+import { BusinessInfo } from "@/types"
+
+export function ProblemSection({ business }: { business: BusinessInfo }) {
   const painPoints = [
     "😩 Pengen makan enak, tapi kantong lagi tipis...",
     "😤 Makan di luar mahal, masak di rumah males...",
@@ -39,10 +41,10 @@ export function ProblemSection() {
 
             <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-l-4 border-orange-500 rounded-xl p-5">
               <h3 className="font-syne font-bold text-xl text-gray-800 mb-2">
-                🍝 WARPAS SZA jawabannya!
+                🍝 {business.name} jawabannya!
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Pasta creamy dan lezat, harga cuma 15–30 ribuan, langsung diproses
+                Pasta creamy dan lezat, harga cuma {business.minPrice / 1000}–{business.maxPrice / 1000} ribuan, langsung diproses
                 tanpa antri. Tinggal chat, duduk, makan. Sesimple itu.
               </p>
             </div>
@@ -52,4 +54,4 @@ export function ProblemSection() {
       </div>
     </section>
   )
-}
+}

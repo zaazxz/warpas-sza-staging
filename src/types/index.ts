@@ -8,6 +8,13 @@ export interface MenuItem {
   badgeColor: string
   rating: number
   waText: string
+  available: boolean
+}
+
+export interface Theme {
+  primary: string    // hex color, e.g. "#f97316"
+  accent: string     // hex color, e.g. "#fb923c"
+  textOnPrimary: string // e.g. "#ffffff"
 }
 
 export interface Testimonial {
@@ -31,4 +38,10 @@ export interface BusinessInfo {
   maxPrice: number
   mapEmbedUrl: string
   waBaseUrl: string
+}
+
+export const DEFAULT_THEME: Theme = {
+  primary: "#f97316",
+  accent: "#fb923c",
+  textOnPrimary: "#ffffff",
 }

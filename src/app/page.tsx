@@ -9,34 +9,38 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { StickyWAButton } from "@/components/StickyWAButton"
+import { getDb } from "@/lib/data-service"
 
 export const metadata: Metadata = {
   title: "WARPAS SZA – Warung Pasta Enak Karawang | Mulai 15K",
   description:
-    "WARPAS SZA – Pasta hangat enak dan murah di Karawang. Mulai 15K. Order via WhatsApp, balas cepat!",
+    "WARPAS SZA – Pasta hangat enak and murah di Karawang. Mulai 15K. Order via WhatsApp, balas cepat!",
   keywords: ["Warung Pasta Karawang", "Pasta Enak Karawang", "WARPAS SZA", "makanan murah Karawang"],
   openGraph: {
     title: "WARPAS SZA – Pasta Hangat Favorit Karawang",
-    description: "Murah, kenyang, dan bikin nagih. Mulai 15K aja!",
+    description: "Murah, kenyang, and bikin nagih. Mulai 15K aja!",
     type: "website",
   },
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const db = getDb()
+  const { business, menu, testimonials } = db
+
   return (
     <>
-      <Navbar />
+      <Navbar business={business} />
       <main>
-        <HeroSection />
-        <ProblemSection />
-        <MenuSection />
-        <ProofSection />
-        <UrgencySection />
-        <LokasiSection />
-        <FinalCTASection />
+        <HeroSection business={business} />
+        <ProblemSection business={business} />
+        <MenuSection business={business} items={menu} />
+        <ProofSection testimonials={testimonials} />
+        <UrgencySection business={business} />
+        <LokasiSection business={business} />
+        <FinalCTASection business={business} />
       </main>
-      <Footer />
-      <StickyWAButton />
+      <Footer business={business} />
+      <StickyWAButton business={business} />
     </>
   )
 }

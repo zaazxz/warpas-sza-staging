@@ -1,7 +1,7 @@
-import { BUSINESS } from "@/lib/constants"
+import { BusinessInfo } from "@/types"
 import { WAButton } from "@/components/ui/WAButton"
 
-export function FinalCTASection() {
+export function FinalCTASection({ business }: { business: BusinessInfo }) {
   return (
     <section
       id="finalcta"
@@ -27,7 +27,7 @@ export function FinalCTASection() {
         </p>
 
         <WAButton
-          href={BUSINESS.waBaseUrl}
+          href={business.waBaseUrl}
           variant="white"
           size="lg"
           className="font-syne shadow-2xl"

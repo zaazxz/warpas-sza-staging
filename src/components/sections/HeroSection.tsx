@@ -1,9 +1,9 @@
 "use client"
 
 import { WAButton } from "@/components/ui/WAButton"
-import { BUSINESS } from "@/lib/constants"
+import { BusinessInfo } from "@/types"
 
-export function HeroSection() {
+export function HeroSection({ business }: { business: BusinessInfo }) {
   return (
     <section
       id="hero"
@@ -43,7 +43,7 @@ export function HeroSection() {
             {/* CTA Group */}
             <div className="flex flex-col items-center md:items-start gap-3 animate-fade-up animation-delay-300">
               <WAButton
-                href={BUSINESS.waBaseUrl}
+                href={business.waBaseUrl}
                 size="lg"
                 className="font-syne shadow-orange-500/40"
               >
