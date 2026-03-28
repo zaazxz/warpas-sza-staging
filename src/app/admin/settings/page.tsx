@@ -257,6 +257,19 @@ export default function BusinessSettings() {
               </div>
             </div>
             <div className="space-y-2">
+              <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">GrabFood URL</label>
+              <div className="relative">
+                 <span className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">🛵</span>
+                 <input
+                   type="text"
+                   placeholder="https://food.grab.com/id/..."
+                   value={data?.grabFoodUrl || ""}
+                   onChange={(e) => setData({ ...data!, grabFoodUrl: e.target.value })}
+                   className="w-full pl-14 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-medium text-xs text-gray-400"
+                 />
+              </div>
+            </div>
+            <div className="space-y-2">
               <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Instagram URL</label>
               <div className="relative">
                  <span className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">📸</span>

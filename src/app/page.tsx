@@ -6,6 +6,7 @@ import { ProofSection } from "@/components/sections/ProofSection"
 import { UrgencySection } from "@/components/sections/UrgencySection"
 import { LokasiSection } from "@/components/sections/LokasiSection"
 import { FinalCTASection } from "@/components/sections/FinalCTASection"
+// Force rebuild 2
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { StickyWAButton } from "@/components/StickyWAButton"

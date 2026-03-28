@@ -49,9 +49,9 @@ export function HeroSection({ business }: { business: BusinessInfo }) {
               >
                 Pesan Sekarang via WhatsApp
               </WAButton>
-              
+
               {/* Other Platforms */}
-              {(business.shopeeFoodUrl || business.goFoodUrl || business.instagramUrl) && (
+              {(business.shopeeFoodUrl || business.goFoodUrl || business.instagramUrl || business.grabFoodUrl) && (
                 <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-2">
                   <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 w-full md:w-auto">Atau pesan lewat:</span>
                   <div className="flex gap-3">
@@ -68,6 +68,11 @@ export function HeroSection({ business }: { business: BusinessInfo }) {
                     {business.instagramUrl && (
                       <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-xl shadow-sm hover:scale-110 transition-transform" title="Instagram">
                         📸
+                      </a>
+                    )}
+                    {business.grabFoodUrl && (
+                      <a href={business.grabFoodUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-xl shadow-sm hover:scale-110 transition-transform" title="GrabFood">
+                        🛵
                       </a>
                     )}
                   </div>

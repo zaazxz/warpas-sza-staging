@@ -128,7 +128,16 @@ export default function MenuManagement() {
               </div>
               <p className="text-sm text-gray-500 dark:text-zinc-400 line-clamp-2 mt-1 leading-relaxed flex-1">{item.description}</p>
               <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-50 dark:border-zinc-800/50">
-                <span className="font-black text-orange-600 dark:text-orange-500 text-xl tracking-tighter">Rp {item.price.toLocaleString()}</span>
+                <div className="flex flex-col">
+                  {item.discountPrice ? (
+                    <>
+                      <span className="font-black text-orange-600 dark:text-orange-500 text-xl tracking-tighter">Rp {item.discountPrice.toLocaleString()}</span>
+                      <span className="text-[10px] text-gray-400 line-through">Rp {item.price.toLocaleString()}</span>
+                    </>
+                  ) : (
+                    <span className="font-black text-orange-600 dark:text-orange-500 text-xl tracking-tighter">Rp {item.price.toLocaleString()}</span>
+                  )}
+                </div>
                 {item.badge && (
                   <span className={`text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg text-white shadow-sm ${item.badgeColor}`}>
                     {item.badge}
@@ -182,6 +191,19 @@ export default function MenuManagement() {
                       placeholder="0"
                       value={editingItem?.price || 0}
                       onChange={(e) => setEditingItem({ ...editingItem!, price: parseInt(e.target.value) || 0 })}
+                      className="w-full pl-12 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-bold text-gray-800 dark:text-white"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Harga Diskon (Rp) - Opsional</label>
+                  <div className="relative">
+                    <span className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-sm">Rp</span>
+                    <input
+                      type="number"
+                      placeholder="Kosongkan jika tidak ada diskon"
+                      value={editingItem?.discountPrice || ""}
+                      onChange={(e) => setEditingItem({ ...editingItem!, discountPrice: parseInt(e.target.value) || undefined })}
                       className="w-full pl-12 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-bold text-gray-800 dark:text-white"
                     />
                   </div>

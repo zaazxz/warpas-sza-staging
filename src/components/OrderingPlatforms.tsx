@@ -21,13 +21,13 @@ export function OrderingPlatforms({ business }: { business: BusinessInfo }) {
       label: "Order Lewat Gojek"
     },
     {
-      name: "Instagram",
-      url: business.instagramUrl,
-      icon: "📸",
-      color: "bg-rose-50",
-      textColor: "text-rose-600",
-      borderColor: "border-rose-200",
-      label: "Cek IG Kita"
+      name: "GrabFood",
+      url: business.grabFoodUrl,
+      icon: "🛵",
+      color: "bg-emerald-50",
+      textColor: "text-emerald-600",
+      borderColor: "border-emerald-200",
+      label: "Order Lewat Grab"
     }
   ].filter(p => p.url)
 
@@ -37,13 +37,13 @@ export function OrderingPlatforms({ business }: { business: BusinessInfo }) {
     <section className="py-12 bg-white">
       <div className="max-w-5xl mx-auto px-5">
         <div className="text-center mb-8">
-           <h3 className="font-syne font-black text-xl text-gray-800 uppercase tracking-widest">
-              Laper? Langsung Cek Di Sini 👇
-           </h3>
+          <h3 className="font-syne font-black text-xl text-gray-800 uppercase tracking-widest">
+            Laper? Langsung Cek Di Sini 👇
+          </h3>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {platforms.map((p) => (
-            <a 
+            <a
               key={p.name}
               href={p.url}
               target="_blank"

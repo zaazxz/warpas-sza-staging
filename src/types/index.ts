@@ -9,6 +9,7 @@ export interface MenuItem {
   rating: number
   waText: string
   available: boolean
+  discountPrice?: number
 }
 
 export interface Theme {
@@ -41,6 +42,7 @@ export interface BusinessInfo {
   waBaseUrl: string
   shopeeFoodUrl?: string
   goFoodUrl?: string
+  grabFoodUrl?: string
   instagramUrl?: string
 }
 

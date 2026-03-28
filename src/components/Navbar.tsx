@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import Link from "next/link"
 import { useUIStore } from "@/store/useUIStore"
 import { WAButton } from "@/components/ui/WAButton"
 import { BusinessInfo } from "@/types"
@@ -23,10 +24,10 @@ export function Navbar({ business }: { business: BusinessInfo }) {
     >
       <div className="max-w-5xl mx-auto px-5 py-3 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 text-primary font-extrabold text-xl font-syne no-underline">
+        <Link href="/" className="flex items-center gap-2 text-primary font-extrabold text-xl font-syne no-underline">
           <span className="text-2xl">🍝</span>
           {business.name}
-        </a>
+        </Link>
 
         {/* Desktop CTA */}
         <WAButton

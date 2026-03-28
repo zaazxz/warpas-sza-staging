@@ -45,6 +45,15 @@ export function Footer({ business }: { business: BusinessInfo }) {
                </a>
              </>
           )}
+          
+          {business.grabFoodUrl && (
+             <>
+               &nbsp;|&nbsp; 🛵{" "}
+               <a href={business.grabFoodUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                 GrabFood
+               </a>
+             </>
+          )}
 
           &nbsp;|&nbsp; 🕘 {business.openHour}–{business.closeHour}
         </p>

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { MenuCard } from "@/components/MenuCard"
@@ -19,7 +20,13 @@ export default async function MenuPage() {
         <div className="max-w-5xl mx-auto px-5">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="font-syne font-extrabold text-4xl md:text-5xl text-gray-900 mb-4">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform"
+            >
+              ← Kembali ke Beranda
+            </Link>
+            <h1 className="font-syne font-extrabold text-4xl md:text-5xl text-gray-900 mb-4 tracking-tighter">
               Katalog Menu <span className="text-primary">WARPAS SZA</span>
             </h1>
             <p className="text-gray-500 max-w-2xl leading-relaxed">

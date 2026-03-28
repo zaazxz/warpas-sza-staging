@@ -27,6 +27,7 @@ export const INITIAL_DATA = {
     waBaseUrl: "https://wa.me/6281219537456?text=Halo%20saya%20mau%20order%20WARPAS%20SZA",
     shopeeFoodUrl: "",
     goFoodUrl: "",
+    grabFoodUrl: "https://food.grab.com/id/",
     instagramUrl: "https://instagram.com/warpas.sza",
   },
   menu: [
@@ -41,6 +42,7 @@ export const INITIAL_DATA = {
       rating: 5,
       available: true,
       waText: "Halo%20saya%20mau%20order%20Pasta%20Carbonara%20WARPAS%20SZA",
+      discountPrice: 12000,
     },
     {
       id: "bolognese",

@@ -13,6 +13,7 @@
     "waBaseUrl": "https://wa.me/6281219537456?text=Halo%20saya%20mau%20order%20WARPAS%20SZA",
     "shopeeFoodUrl": "https://shopee.co.id/universal-link/food/shop/123456",
     "goFoodUrl": "https://gofood.link/a/warpas-sza",
+    "grabFoodUrl": "https://food.grab.com/id/",
     "instagramUrl": "https://instagram.com/warpas.sza"
   },
   "menu": [
@@ -26,7 +27,8 @@
       "badgeColor": "bg-orange-500",
       "rating": 5,
       "available": true,
-      "waText": "Halo%20saya%20mau%20order%20Pasta%20Carbonara%20WARPAS%20SZA"
+      "waText": "Halo%20saya%20mau%20order%20Pasta%20Carbonara%20WARPAS%20SZA",
+      "discountPrice": 12000
     },
     {
       "id": "bolognese",
