@@ -19,6 +19,7 @@ export const BUSINESS: BusinessInfo = {
 export const MENU_ITEMS: MenuItem[] = [
   {
     id: "carbonara",
+    available: true,
     name: "Pasta Carbonara Creamy",
     description: "Saus carbonara creamy dengan keju leleh. Nagih banget, porsi gak pelit!",
     price: 15000,
@@ -30,6 +31,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "bolognese",
+    available: true,
     name: "Pasta Bolognese Spesial",
     description: "Saus tomat rich dengan daging cincang, bumbu rempah rahasia warung.",
     price: 18000,
@@ -41,6 +43,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "aglio",
+    available: true,
     name: "Aglio e Olio Pedas",
     description: "Bawang putih, cabai, olive oil. Simpel tapi bikin ketagihan!",
     price: 20000,
@@ -52,6 +55,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "formaggi",
+    available: true,
     name: "Pasta 4 Formaggi",
     description: "Empat keju meleleh dalam satu mangkuk. Level comfort food selanjutnya!",
     price: 28000,

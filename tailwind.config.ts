@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          foreground: "var(--color-text-on-primary)",
+        },
+        accent: {
+          DEFAULT: "var(--color-accent)",
+        },
+        background: "var(--color-background)",
+        "on-primary": "var(--color-text-on-primary)",
+      },
       fontFamily: {
         syne: ["var(--font-syne)", "sans-serif"],
         jakarta: ["var(--font-jakarta)", "sans-serif"],

@@ -6,14 +6,17 @@
     "node": ">=20.9.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "upgrade": "npx @next/codemod@canary upgrade latest"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "jose": "^6.2.1",
     "next": "^16.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
