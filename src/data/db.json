@@ -10,7 +10,10 @@
     "minPrice": 15000,
     "maxPrice": 30000,
     "mapEmbedUrl": "https://maps.google.com/maps?q=-6.381605,107.452321&z=16&output=embed",
-    "waBaseUrl": "https://wa.me/6281219537456?text=Halo%20saya%20mau%20order%20WARPAS%20SZA"
+    "waBaseUrl": "https://wa.me/6281219537456?text=Halo%20saya%20mau%20order%20WARPAS%20SZA",
+    "shopeeFoodUrl": "https://shopee.co.id/universal-link/food/shop/123456",
+    "goFoodUrl": "https://gofood.link/a/warpas-sza",
+    "instagramUrl": "https://instagram.com/warpas.sza"
   },
   "menu": [
     {
@@ -55,16 +58,28 @@
       "description": "Empat keju meleleh dalam satu mangkuk. Level comfort food selanjutnya!",
       "price": 28000,
       "emoji": "🧀",
-      "badge": "Premium",
-      "badgeColor": "bg-amber-600",
+      "badge": "",
+      "badgeColor": "bg-orange-500",
       "rating": 5,
       "available": true,
       "waText": "Halo%20saya%20mau%20order%20Pasta%204%20Formaggi%20WARPAS%20SZA"
+    },
+    {
+      "name": "Contoh Pasta",
+      "description": "contoh pasta",
+      "price": 5000,
+      "emoji": "🍝",
+      "badge": "",
+      "badgeColor": "bg-orange-500",
+      "rating": 5,
+      "waText": "Halo%20saya%20mau%20order%20Contoh%20Pasta%20WARPAS%20SZA",
+      "id": "54vx234pq"
     }
   ],
   "theme": {
     "primary": "#f97316",
     "accent": "#fb923c",
+    "background": "#fff7ed",
     "textOnPrimary": "#ffffff"
   },
   "testimonials": [
@@ -91,6 +106,14 @@
       "text": "Langsung dibalas WA-nya, gak lama. Pesannya gampang banget. Rasa? Udah 5x order minggu ini 😂",
       "avatar": "👩",
       "rating": 5
+    },
+    {
+      "name": "vontoh",
+      "location": "contoh",
+      "text": "contoh",
+      "avatar": "👩",
+      "rating": 5,
+      "id": "el8f6zt35"
     }
   ],
   "user": {

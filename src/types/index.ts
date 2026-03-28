@@ -14,6 +14,7 @@ export interface MenuItem {
 export interface Theme {
   primary: string    // hex color, e.g. "#f97316"
   accent: string     // hex color, e.g. "#fb923c"
+  background: string // e.g. "#fdf5e6"
   textOnPrimary: string // e.g. "#ffffff"
 }
 
@@ -38,10 +39,14 @@ export interface BusinessInfo {
   maxPrice: number
   mapEmbedUrl: string
   waBaseUrl: string
+  shopeeFoodUrl?: string
+  goFoodUrl?: string
+  instagramUrl?: string
 }
 
 export const DEFAULT_THEME: Theme = {
   primary: "#f97316",
   accent: "#fb923c",
+  background: "#fff7ed",
   textOnPrimary: "#ffffff",
 }

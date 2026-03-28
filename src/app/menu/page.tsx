@@ -12,15 +12,15 @@ export default async function MenuPage() {
   const availableMenu = menu.filter(item => item.available !== false)
 
   return (
-    <div className="min-h-screen bg-orange-50/50">
+    <div className="min-h-screen bg-background">
       <Navbar business={business} />
       
-      <main className="pt-24 pb-20">
+      <main className="pt-24 pb-20 bg-background">
         <div className="max-w-5xl mx-auto px-5">
           {/* Header */}
           <div className="mb-12">
             <h1 className="font-syne font-extrabold text-4xl md:text-5xl text-gray-900 mb-4">
-              Katalog Menu <span className="text-orange-500">WARPAS SZA</span>
+              Katalog Menu <span className="text-primary">WARPAS SZA</span>
             </h1>
             <p className="text-gray-500 max-w-2xl leading-relaxed">
               Semua pasta favorit kamu ada di sini. Pilih, pesan via WhatsApp, and nikmati kelezatannya selagi hangat!
@@ -31,7 +31,7 @@ export default async function MenuPage() {
           {availableMenu.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {availableMenu.map((item) => (
-                <MenuCard key={item.id} item={item} whatsapp={business.whatsapp} />
+                <MenuCard key={item.id} item={item} business={business} />
               ))}
             </div>
           ) : (

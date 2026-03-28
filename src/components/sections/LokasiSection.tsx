@@ -3,11 +3,11 @@ import { BusinessInfo } from "@/types"
 
 export function LokasiSection({ business }: { business: BusinessInfo }) {
   return (
-    <section id="lokasi" className="py-20 bg-orange-50">
+    <section id="lokasi" className="py-20 bg-background">
       <div className="max-w-5xl mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+          <span className="inline-block bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
             Lokasi Kami
           </span>
           <h2 className="font-syne font-extrabold text-3xl md:text-4xl text-gray-800 mb-2">
@@ -18,7 +18,7 @@ export function LokasiSection({ business }: { business: BusinessInfo }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Map */}
-          <div className="rounded-3xl overflow-hidden shadow-lg border-2 border-orange-200 h-72 md:h-80">
+          <div className="rounded-3xl overflow-hidden shadow-lg border-2 border-primary/10 h-72 md:h-80">
             <iframe
               src={business.mapEmbedUrl}
               className="w-full h-full"
@@ -54,7 +54,7 @@ export function LokasiSection({ business }: { business: BusinessInfo }) {
               { icon: "📱", label: "WhatsApp Order", value: `+${business.whatsapp}` },
             ].map((row) => (
               <div key={row.label} className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-lg shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center text-lg shrink-0">
                   {row.icon}
                 </div>
                 <div>

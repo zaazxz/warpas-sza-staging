@@ -9,6 +9,7 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { StickyWAButton } from "@/components/StickyWAButton"
+import { OrderingPlatforms } from "@/components/OrderingPlatforms"
 import { getDb } from "@/lib/data-service"
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default async function HomePage() {
       <Navbar business={business} />
       <main>
         <HeroSection business={business} />
+        <OrderingPlatforms business={business} />
         <ProblemSection business={business} />
         <MenuSection business={business} items={menu} />
         <ProofSection testimonials={testimonials} />

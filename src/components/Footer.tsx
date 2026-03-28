@@ -12,12 +12,40 @@ export function Footer({ business }: { business: BusinessInfo }) {
           📱{" "}
           <a
             href={business.waBaseUrl}
-            className="text-amber-400 hover:text-amber-300 transition-colors"
+            className="text-accent hover:text-accent/80 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
             +{business.whatsapp}
-          </a>{" "}
+          </a>
+          
+          {business.instagramUrl && (
+            <>
+              &nbsp;|&nbsp; 📸{" "}
+              <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                Instagram
+              </a>
+            </>
+          )}
+
+          {business.shopeeFoodUrl && (
+             <>
+               &nbsp;|&nbsp; 🧡{" "}
+               <a href={business.shopeeFoodUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                 ShopeeFood
+               </a>
+             </>
+          )}
+
+          {business.goFoodUrl && (
+             <>
+               &nbsp;|&nbsp; 💚{" "}
+               <a href={business.goFoodUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors">
+                 GoFood
+               </a>
+             </>
+          )}
+
           &nbsp;|&nbsp; 🕘 {business.openHour}–{business.closeHour}
         </p>
         <p className="mt-3 text-gray-600">

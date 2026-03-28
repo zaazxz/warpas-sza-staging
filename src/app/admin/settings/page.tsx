@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { BusinessInfo } from "@/types"
+import { BusinessInfo, DEFAULT_THEME } from "@/types"
 
 export default function BusinessSettings() {
   const [data, setData] = useState<BusinessInfo | null>(null)
@@ -14,7 +14,7 @@ export default function BusinessSettings() {
   const [savingPass, setSavingPass] = useState(false)
 
   // Theme state
-  const [theme, setTheme] = useState({ primary: "#f97316", accent: "#fb923c", textOnPrimary: "#ffffff" })
+  const [theme, setTheme] = useState({ primary: "#f97316", accent: "#fb923c", background: "#fdf5e6", textOnPrimary: "#ffffff" })
   const [savingTheme, setSavingTheme] = useState(false)
 
   useEffect(() => {
@@ -98,6 +98,12 @@ export default function BusinessSettings() {
       setMessage({ type: "error", text: "Gagal memperbarui tema" })
     } finally {
       setSavingTheme(false)
+    }
+  }
+
+  const handleResetTheme = () => {
+    if (confirm("Apakah Anda yakin ingin mengembalikan tema ke warna awal?")) {
+      setTheme(DEFAULT_THEME)
     }
   }
 
@@ -223,6 +229,48 @@ export default function BusinessSettings() {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-2">
+              <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">ShopeeFood URL</label>
+              <div className="relative">
+                 <span className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">🧡</span>
+                 <input
+                   type="text"
+                   placeholder="https://shopee.co.id/universal-link/food/..."
+                   value={data?.shopeeFoodUrl || ""}
+                   onChange={(e) => setData({ ...data!, shopeeFoodUrl: e.target.value })}
+                   className="w-full pl-14 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-medium text-xs text-gray-400"
+                 />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">GoFood URL</label>
+              <div className="relative">
+                 <span className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">💚</span>
+                 <input
+                   type="text"
+                   placeholder="https://gofood.link/a/..."
+                   value={data?.goFoodUrl || ""}
+                   onChange={(e) => setData({ ...data!, goFoodUrl: e.target.value })}
+                   className="w-full pl-14 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-medium text-xs text-gray-400"
+                 />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Instagram URL</label>
+              <div className="relative">
+                 <span className="absolute left-5 top-1/2 -translate-y-1/2 text-xl">📸</span>
+                 <input
+                   type="text"
+                   placeholder="https://instagram.com/..."
+                   value={data?.instagramUrl || ""}
+                   onChange={(e) => setData({ ...data!, instagramUrl: e.target.value })}
+                   className="w-full pl-14 pr-5 py-4 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-medium text-xs text-gray-400"
+                 />
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-2">
             <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Google Maps Embed URL (Iframe src)</label>
             <input
@@ -238,7 +286,7 @@ export default function BusinessSettings() {
             <button
               type="submit"
               disabled={saving}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-black text-sm uppercase tracking-widest py-4 px-12 rounded-2xl transition-all shadow-xl shadow-orange-500/20 active:scale-[0.98] disabled:opacity-50"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-sm uppercase tracking-widest py-4 px-12 rounded-2xl transition-all shadow-xl shadow-primary/20 active:scale-[0.98] disabled:opacity-50"
             >
               {saving ? "⏳ Memproses..." : "🚀 Simpan Semua Perubahan"}
             </button>
@@ -288,8 +336,25 @@ export default function BusinessSettings() {
               </div>
             </div>
             <div className="space-y-2">
+              <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Warna Background</label>
+              <div className="flex gap-3">
+                <input 
+                  type="color" 
+                  value={theme.background}
+                  onChange={(e) => setTheme({...theme, background: e.target.value})}
+                  className="w-14 h-14 rounded-2xl cursor-pointer bg-gray-50 dark:bg-zinc-800 border-none p-1"
+                />
+                <input 
+                  type="text" 
+                  value={theme.background}
+                  onChange={(e) => setTheme({...theme, background: e.target.value})}
+                  className="flex-1 px-5 h-14 bg-gray-50 dark:bg-zinc-800/50 border-2 border-transparent focus:border-orange-500/50 focus:bg-white dark:focus:bg-zinc-800 rounded-2xl transition-all outline-none font-black text-gray-800 dark:text-white uppercase"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
                <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">Preview Live</label>
-               <div className="h-14 rounded-2xl p-2 flex items-center justify-center gap-2 border-2 border-gray-100 dark:border-zinc-800">
+               <div style={{ backgroundColor: theme.background }} className="h-14 rounded-2xl p-2 flex items-center justify-center gap-2 border-2 border-gray-100 dark:border-zinc-800">
                   <div style={{ backgroundColor: theme.primary }} className="w-full h-full rounded-xl flex items-center justify-center shadow-inner">
                      <span className="text-[10px] font-black text-white uppercase tracking-tighter">Primary</span>
                   </div>
@@ -297,12 +362,20 @@ export default function BusinessSettings() {
                </div>
             </div>
           </div>
-          <button 
-            type="submit" 
-            disabled={savingTheme}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-black text-sm uppercase tracking-widest py-4 px-10 rounded-2xl transition-all shadow-xl shadow-orange-500/20 active:scale-[0.98] disabled:opacity-50">
-            {savingTheme ? "⏳ Menyimpan..." : "🌈 Terapkan Tema Warna"}
-          </button>
+          <div className="flex flex-wrap gap-4">
+            <button 
+              type="submit" 
+              disabled={savingTheme}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-sm uppercase tracking-widest py-4 px-10 rounded-2xl transition-all shadow-xl shadow-primary/20 active:scale-[0.98] disabled:opacity-50">
+              {savingTheme ? "⏳ Menyimpan..." : "🌈 Terapkan Tema Warna"}
+            </button>
+            <button 
+              type="button"
+              onClick={handleResetTheme}
+              className="bg-white dark:bg-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-700 text-gray-500 dark:text-gray-400 font-bold text-sm uppercase tracking-widest py-4 px-8 rounded-2xl border-2 border-gray-100 dark:border-zinc-700 transition-all active:scale-[0.98]">
+              🔄 Reset ke Original
+            </button>
+          </div>
         </form>
       </div>
 

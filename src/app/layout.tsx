@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   description: "Warung Pasta SZA – Pasta enak, harga ramah.",
 }
 
+export const dynamic = "force-dynamic"
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const db = getDb()
   const theme = db.theme ?? DEFAULT_THEME
@@ -31,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     :root {
       --color-primary: ${theme.primary};
       --color-accent: ${theme.accent};
+      --color-background: ${theme.background};
       --color-text-on-primary: ${theme.textOnPrimary};
     }
   `
@@ -40,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeVars }} />
       </head>
-      <body className="font-jakarta bg-orange-50 text-gray-800 antialiased overflow-x-hidden">
+      <body className="font-jakarta bg-background text-gray-800 antialiased overflow-x-hidden">
         {children}
       </body>
     </html>

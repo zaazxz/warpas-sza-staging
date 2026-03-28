@@ -5,7 +5,7 @@ export function FinalCTASection({ business }: { business: BusinessInfo }) {
   return (
     <section
       id="finalcta"
-      className="relative py-24 text-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-amber-400"
+      className="relative py-24 text-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-accent"
     >
       {/* Decorative emoji bg */}
       <span className="pointer-events-none absolute left-0 bottom-0 text-[16rem] opacity-[0.07] leading-none select-none">
@@ -34,6 +34,27 @@ export function FinalCTASection({ business }: { business: BusinessInfo }) {
         >
           Pesan via WhatsApp Sekarang 🔥
         </WAButton>
+
+        {/* Other Platform Buttons */}
+        {(business.shopeeFoodUrl || business.goFoodUrl || business.instagramUrl) && (
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            {business.shopeeFoodUrl && (
+              <a href={business.shopeeFoodUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-2xl font-bold text-sm transition-all active:scale-95 flex items-center gap-2">
+                🧡 ShopeeFood
+              </a>
+            )}
+            {business.goFoodUrl && (
+              <a href={business.goFoodUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-2xl font-bold text-sm transition-all active:scale-95 flex items-center gap-2">
+                💚 GoFood
+              </a>
+            )}
+            {business.instagramUrl && (
+              <a href={business.instagramUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-2xl font-bold text-sm transition-all active:scale-95 flex items-center gap-2">
+                📸 Instagram
+              </a>
+            )}
+          </div>
+        )}
 
         <p className="text-white/60 text-sm mt-4">
           ✅ Tanpa minimum order · Balas cepat · Langsung diproses

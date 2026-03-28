@@ -8,19 +8,19 @@ export function ProblemSection({ business }: { business: BusinessInfo }) {
   ]
 
   return (
-    <section id="problem" className="py-20 bg-white">
+    <section id="problem" className="py-20 bg-background">
       <div className="max-w-5xl mx-auto px-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* Visual */}
-          <div className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl h-72 md:h-80 shadow-inner text-8xl">
+          <div className="flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl h-72 md:h-80 shadow-inner text-8xl">
             🤔
           </div>
 
           {/* Content */}
           <div>
             <div className="mb-6">
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+              <span className="inline-block bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
                 Relate gak?
               </span>
               <h2 className="font-syne font-extrabold text-3xl md:text-4xl text-gray-800 leading-tight">
@@ -39,7 +39,7 @@ export function ProblemSection({ business }: { business: BusinessInfo }) {
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 border-l-4 border-orange-500 rounded-xl p-5">
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 border-l-4 border-primary rounded-xl p-5">
               <h3 className="font-syne font-bold text-xl text-gray-800 mb-2">
                 🍝 {business.name} jawabannya!
               </h3>

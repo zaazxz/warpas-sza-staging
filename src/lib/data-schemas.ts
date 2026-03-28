@@ -25,6 +25,9 @@ export const INITIAL_DATA = {
     maxPrice: 30000,
     mapEmbedUrl: "https://maps.google.com/maps?q=-6.381605,107.452321&z=16&output=embed",
     waBaseUrl: "https://wa.me/6281219537456?text=Halo%20saya%20mau%20order%20WARPAS%20SZA",
+    shopeeFoodUrl: "",
+    goFoodUrl: "",
+    instagramUrl: "https://instagram.com/warpas.sza",
   },
   menu: [
     {

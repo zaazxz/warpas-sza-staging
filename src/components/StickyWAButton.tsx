@@ -9,7 +9,7 @@ export function StickyWAButton({ business }: { business: BusinessInfo }) {
       <WAButton
         href={business.waBaseUrl}
         size="md"
-        className="shadow-[0_8px_32px_rgba(249,115,22,0.6)] whitespace-nowrap font-syne"
+        className="shadow-2xl shadow-primary/60 whitespace-nowrap font-syne"
       >
         Pesan via WhatsApp 🔥
       </WAButton>

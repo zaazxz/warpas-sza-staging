@@ -26,11 +26,11 @@ export function WAButton({
 
   const variants = {
     primary:
-      "bg-orange-500 hover:bg-orange-600 text-white shadow-[0_6px_24px_rgba(249,115,22,0.45)] hover:shadow-[0_10px_32px_rgba(234,88,12,0.5)]",
+      "bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl shadow-primary/20",
     white:
-      "bg-white text-orange-500 hover:bg-orange-50 hover:text-orange-600 shadow-[0_8px_32px_rgba(0,0,0,0.2)]",
+      "bg-white text-primary hover:bg-primary/5 shadow-xl shadow-black/5",
     amber:
-      "bg-amber-900 text-amber-100 hover:bg-amber-950 shadow-[0_6px_20px_rgba(0,0,0,0.25)]",
+      "bg-zinc-900 text-white hover:bg-black shadow-xl shadow-black/10",
   }
 
   const sizes = {
